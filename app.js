@@ -6,11 +6,11 @@ let Table = [
 [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
 [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
 [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-[0, 0, 0, 0, 0, 0, -1, -1, 0, 0],
-[0, 0, 0, 0, 0, -1, 0, 0, 0, 0],
-[0, 0, 0, 0, -1, 0, 0, 0, 0, 0],
-[0, 0, 0, 0, -1, 0, 0, 0, 0, 0],
-[0, 0, 0, 0, -1, 0, 0, 0, 1, 0],
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+[0, 0, 0, 0, 0, 0, 0, 0, 1, 0],
 [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
 [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]];
 class Game {
@@ -93,6 +93,7 @@ class Game {
         ctx.fillStyle = "black";
         ctx.fillRect(this.playerPos.x * sizeX, this.playerPos.y * sizeY, sizeX, sizeY);
     }
+
 }
 
 
@@ -238,7 +239,7 @@ async function play() {
             QTable[st][at] = QTable[st][at] + 0.1 * (r + 0.9 * QTable[stp1][atp1] - QTable[st][at])
 
             st = stp1;
-            await new Promise(r => setTimeout(r, 0.5));
+            await new Promise(r => setTimeout(r, 0.5 * index));
         }
 
     }
