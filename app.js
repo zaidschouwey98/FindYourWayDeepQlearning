@@ -244,6 +244,4 @@ async function play() {
 
     }
 }
-play().then(() => {
-    console.log(QTable);
-});
+
